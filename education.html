@@ -1,0 +1,178 @@
+<html>
+	<head>
+		<title>Zoe Hackshaw</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/gif" href="images/pink_favicon.gif">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			a:hover { color: #FF6DCE; }
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+				<section class="wrapper style1 align-center"> <a id="publications_page"></a>
+					<div class="inner">
+						<h2>Educational and Outreach Materials</h2> 
+                        <ul class="actions stacked" ">
+								<li>
+									<a href="index.html" class="button small wide smooth-scroll-middle"><i class="fas fa-home" style="margin-right: 0.4em;"></i>Home</a>
+									<a href="https://zoehackshaw.github.io/Academic_CV_Hackshaw.pdf" class="button small wide smooth-scroll-middle"><i class="fas fa-list-ul" style="margin-right: 0.4em;"></i>CV</a>
+								</li>
+                        </ul>
+						<p>Here are a few previews of talks that I have given to vastly different age ranges. For easy access, <a href="https://drive.google.com/file/d/1uHIgUlQ1R_KG8619O0rfzCSNtMHKt2GZ/view?usp=sharing">here is the link</a> for the time lapse of me opening the dome of the 2.7m Harlan J Smith telescope at McDonald Observatory in West Texas. </p>
+						<div class="items style1 medium onscroll-fade-in" style="grid-template-columns: repeat(3, 1fr); max-width: 1000px; margin: 0 auto;">
+
+                            <!-- Deck 1 -->
+                            <section>
+                                <div class="slideshow" id="deck1">
+                                <div class="slides">
+                                    <img src="images/4thgrade_growup.png" class="slide active" alt="A slide explaining that humans can figure out how older generations grew up with words and stories, but to figure out how stars grew up we need to use their light." />
+                                    <img src="images/4thgrade_makeup.png" class="slide" alt="A slide explaining that the elements that were created in stars make-up our bodies and planet." />
+                                    <img src="images/4thgrade_minecraft.png" class="slide" alt="A slide using minecraft to explain the hierarchical formation of the galaxy." />
+                                </div>
+                                <div class="slide-controls">
+                                    <button class="prev" onclick="changeSlide('deck1', -1)">&#8249;</button>
+                                    <div class="dots">
+                                    <span class="dot active"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    </div>
+                                    <button class="next" onclick="changeSlide('deck1', 1)">&#8250;</button>
+                                </div>
+                                </div>
+                                <h3>Fourth Grade Presentation</h3>
+                                <p>Some clips from a general astronomy lesson to a fourth grade class at an elementary school in Florida.</p>
+                            </section>
+
+                            <!-- Deck 2 -->
+                            <section>
+                                <div class="slideshow" id="deck2">
+                                <div class="slides">
+                                    <img src="images/highschool_spectroscopy.png" class="slide active" alt="A slide explaining how photons moving along our line of sight can tell us the make-up of stars." />
+                                    <img src="images/highschool_metallicity.png" class="slide" alt="A slide explaining how metallicity increases with generations of stars." />
+                                    <img src="images/highschool_bh3.png" class="slide" alt="A slide showing the system Gaia BH3 and highlighting why it's interesting. " />
+                                </div>
+                                <div class="slide-controls">
+                                    <button class="prev" onclick="changeSlide('deck2', -1)">&#8249;</button>
+                                    <div class="dots">
+                                    <span class="dot active"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    </div>
+                                    <button class="next" onclick="changeSlide('deck2', 1)">&#8250;</button>
+                                </div>
+                                </div>
+                                <h3>High School Physics Presentation</h3>
+                                <p>Some clips from an astronomy and physics focused club presentation for high schoolers in Nevada.</p>
+                            </section>
+
+                            <!-- Deck 3 -->
+                            <!-- <section>
+                                <div class="slideshow" id="deck3">
+                                <div class="slides">
+                                    <img src="images/deck3_slide1.jpg" class="slide active" alt="Slide 1" />
+                                    <img src="images/deck3_slide2.jpg" class="slide" alt="Slide 2" />
+                                    <img src="images/deck3_slide3.jpg" class="slide" alt="Slide 3" />
+                                </div>
+                                <div class="slide-controls">
+                                    <button class="prev" onclick="changeSlide('deck3', -1)">&#8249;</button>
+                                    <div class="dots">
+                                    <span class="dot active"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    </div>
+                                    <button class="next" onclick="changeSlide('deck3', 1)">&#8250;</button>
+                                </div>
+                                </div>
+                                <h3>Talk Title Three</h3>
+                                <p>Description of this talk and the audience it was given to.</p>
+                            </section> -->
+
+                         </div>
+                         <style>
+                            .slideshow { position: relative; width: 100%; margin-bottom: 1em; }
+                            .slides { position: relative; width: 100%; }
+                            .slide { display: none; width: 100%; height: auto; border-radius: 4px; }
+                            .slide.active { display: block; }
+                            .slide-controls {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.8em;
+                                margin-top: 0.5em;
+                            }
+                            .slide-controls button {
+                                background: none;
+                                border: 1px solid #aaa;
+                                border-radius: 50%;
+                                width: 28px;
+                                height: 28px;
+                                font-size: 1.1em;
+                                line-height: 1;
+                                cursor: pointer;
+                                color: #aaa;
+                                padding: 0;
+                                transition: border-color 0.2s, color 0.2s;
+                            }
+                            .slide-controls button:hover { border-color: #FF6DCE; color: #FF6DCE; }
+                            .dots { display: flex; gap: 0.4em; }
+                            .dot {
+                                width: 7px; height: 7px;
+                                border-radius: 50%;
+                                background: #aaa;
+                                cursor: pointer;
+                                transition: background 0.2s;
+                            }
+                            .dot.active { background: #FF6DCE; }
+                        </style>
+
+					</div>
+				</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script>
+                function changeSlide(deckId, dir) {
+                    const deck = document.getElementById(deckId);
+                    const slides = deck.querySelectorAll('.slide');
+                    const dots = deck.querySelectorAll('.dot');
+                    let current = [...slides].findIndex(s => s.classList.contains('active'));
+
+                    slides[current].classList.remove('active');
+                    dots[current].classList.remove('active');
+
+                    current = (current + dir + slides.length) % slides.length;
+
+                    slides[current].classList.add('active');
+                    dots[current].classList.add('active');
+                }
+
+                // Make dots clickable too
+                document.querySelectorAll('.dot').forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                    const deck = dot.closest('.slideshow');
+                    const slides = deck.querySelectorAll('.slide');
+                    const dots = deck.querySelectorAll('.dot');
+                    slides.forEach(s => s.classList.remove('active'));
+                    dots.forEach(d => d.classList.remove('active'));
+                    slides[i].classList.add('active');
+                    dots[i].classList.add('active');
+                    });
+                });
+            </script>
+
+	</body>
+</html>
