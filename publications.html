@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Publications | Zoe Hackshaw</title>
+  <link rel="icon" type="image/gif" href="images/pink_favicon.gif">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <style>
+    a:hover { color: #FF6DCE; }
+
+    /* body { font-family: sans-serif; } */
+    .inner {
+      max-width: 900px !important;
+      width: 90% !important;
+      text-align: left;
+      margin: 3em auto; /* bigger top margin */
+    }
+
+    .pub-year {
+      font-size: 1.4em;
+      font-weight: 700;
+      border-bottom: 2px solid #FF6DCE;
+      padding-bottom: 0.3em;
+      margin: 2em 0 1em 0;
+      color: inherit;
+    }
+
+    .pub-entry {
+      display: flex;
+      gap: 1.5em;
+      margin-bottom: 2em;
+      align-items: flex-start;
+    }
+
+    .pub-thumb {
+      flex: 0 0 140px;
+      width: 140px;
+    }
+
+    .pub-thumb img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+
+    .pub-thumb-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #f0f0f0;
+      border-radius: 4px;
+      border: 1px dashed #ccc;
+    }
+
+    .pub-details {
+      flex: 1;
+    }
+
+    .pub-title {
+      font-size: 1em;
+      font-weight: 600;
+      margin: 0 0 0.3em 0;
+      line-height: 1.4;
+    }
+
+    .pub-authors {
+      font-size: 0.88em;
+      color: #666;
+      margin: 0 0 0.3em 0;
+    }
+
+    .pub-authors strong {
+      color: #FF6DCE;
+      font-weight: 600;
+    }
+
+    .pub-journal {
+      font-size: 0.88em;
+      font-style: italic;
+      color: #888;
+      margin: 0 0 0.5em 0;
+    }
+
+    .pub-links {
+      display: flex;
+      gap: 0.6em;
+      flex-wrap: wrap;
+      margin-bottom: 0.6em;
+    }
+
+    .pub-links a {
+      font-size: 0.8em;
+      padding: 0.2em 0.7em;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .pub-links a:hover {
+      border-color: #FF6DCE;
+      color: #FF6DCE;
+    }
+
+    .pub-summary {
+      font-size: 0.88em;
+      color: #444;
+      margin: 0.3em 0 0.6em;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .pub-entry { flex-direction: column; }
+      .pub-thumb { width: 100%; flex: unset; }
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+
+  <div id="wrapper" class="divided">
+
+    <section class="wrapper style1 align-center">
+      <div class="inner">
+
+        <h2>Publications</h2>
+        <ul class="actions" style="justify-content: center;">
+          <li>
+							<a href="index.html" class="button small smooth-scroll-middle"><i class="fas fa-home" style="margin-right: 0.4em;"></i>Home</a>
+							<a href="https://zoehackshaw.github.io/Academic_CV_Hackshaw.pdf" class="button small smooth-scroll-middle"><i class="fas fa-list-ul" style="margin-right: 0.4em;"></i>CV</a>
+						</li>
+        </ul>
+        <p>First-author publications in reverse chronological order. Full list of contributing-author publications available on <a href="https://ui.adsabs.harvard.edu/search/q=author%3AHackshaw%2C+Z&sort=date+desc" target="_blank">NASA ADS</a>.</p>
+
+        <div id="pub-list"></div>
+
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const publications = [
+      {
+        title: "A Detailed Chemical Analysis of the Red Giant Orbiting Gaia BH3: From Lithium to Thorium",
+        authors: ["Z. Hackshaw", "K. Hawkins", "C. Manea"],
+        journal: "ApJ",
+        year: 2025,
+        adsurl: "https://ui.adsabs.harvard.edu/abs/2025ApJ...995..140H/abstract",
+        pdfurl: "https://iopscience.iop.org/article/10.3847/1538-4357/ae1617/pdf",
+        thumbnail: "images/gaia_bh3.png",
+        summary: "We derived 29 chemical abundances from lithium to thorium for the red giant star companion in the anomalous binary system Gaia BH3 to peer into its formation history."
+      },
+      {
+        title: "[X/Fe] Marks the Spot: Mapping Chemical Azimuthal Variations in the Galactic Disk with APOGEE",
+        authors: ["Z. Hackshaw", "K. Hawkins", "C. Filion", "D. Horta", "et al."],
+        journal: "ApJ",
+        year: 2024,
+        adsurl: "https://ui.adsabs.harvard.edu/abs/2024ApJ...977..143H/abstract",
+        pdfurl: "https://iopscience.iop.org/article/10.3847/1538-4357/ad900e/pdf",
+        thumbnail: "images/azimuthal_variations.png",
+        summary: "Chemical azimuthal variations in the Galactic disk show age dependencies and hints towards what dynamical process is causing this substructure, superimposed on the well-known negative radial metallicity gradient."
+      }
+    ];
+
+    function formatAuthors(authors) {
+      return authors.map(name => {
+        return name.toLowerCase().includes('hackshaw') ? `<strong>${name}</strong>` : name;
+      }).join(', ');
+    }
+
+    function loadPublications() {
+      const container = document.getElementById('pub-list');
+      container.innerHTML = '';
+
+      const byYear = {};
+      publications.forEach(pub => {
+        if (!byYear[pub.year]) byYear[pub.year] = [];
+        byYear[pub.year].push(pub);
+      });
+
+      Object.keys(byYear).sort((a,b)=>b-a).forEach(year => {
+        const yearDiv = document.createElement('div');
+        yearDiv.className = 'pub-year';
+        yearDiv.textContent = year;
+        container.appendChild(yearDiv);
+
+        byYear[year].forEach(pub => {
+          const thumbHtml = pub.thumbnail ? `<img src="${pub.thumbnail}" alt="${pub.title} thumbnail">` : `<div class="pub-thumb-placeholder"></div>`;
+          const authorsHtml = formatAuthors(pub.authors);
+          const links = [];
+          if(pub.adsurl) links.push(`<a href="${pub.adsurl}" target="_blank">ADS</a>`);
+          if(pub.pdfurl) links.push(`<a href="${pub.pdfurl}" target="_blank">PDF</a>`);
+
+          const entryDiv = document.createElement('div');
+          entryDiv.className = 'pub-entry';
+          entryDiv.innerHTML = `
+            <div class="pub-thumb">${thumbHtml}</div>
+            <div class="pub-details">
+              <p class="pub-title">${pub.title}</p>
+              <p class="pub-authors">${authorsHtml}</p>
+              <p class="pub-journal"><em>${pub.journal}</em>, ${pub.year}</p>
+              <div class="pub-links">${links.join(' ')}</div>
+              <p class="pub-summary">${pub.summary}</p>
+            </div>
+          `;
+          container.appendChild(entryDiv);
+        });
+      });
+    }
+
+    window.addEventListener('load', loadPublications);
+  </script>
+
+</body>
+</html>
