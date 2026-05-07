@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+    Story by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Zoe Hackshaw</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="icon" type="image/gif" href="images/pink_favicon.gif">
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            a:hover { color: #FF6DCE; }
+            .inner {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .bokeh-container {
+                width: 100%;
+                overflow-x: auto;
+                margin: 2em 0;
+            }
+            /* Match the blurb text width to feel intentional */
+            .blurb {
+                max-width: 860px;
+                margin: 0 auto 2em auto;
+                text-align: left;
+            }
+            .blurb h3 {
+                margin-bottom: 0.4em;
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+
+        <div id="wrapper" class="divided">
+
+            <!-- Header -->
+            <section class="wrapper style1 align-center">
+                <div class="inner">
+                    <h2>Stellar Spectra Explorer</h2>
+                    <ul class="actions stacked">
+                        <li>
+                            <a href="index.html" class="button small wide smooth-scroll-middle"><i class="fas fa-home" style="margin-right: 0.4em;"></i>Home</a>
+                            <a href="https://zoehackshaw.github.io/Academic_CV_Hackshaw.pdf" class="button small wide smooth-scroll-middle"><i class="fas fa-list-ul" style="margin-right: 0.4em;"></i>CV</a>
+                        </li>
+                    </ul>
+
+                    <!-- Bokeh plot injected here -->
+                    <div class="bokeh-container">
+                        <h3>Exploring Gaia RVS Spectra</h3>
+                        <p>
+                            Stars have fingerprints! The wavelengths of light absorbed by a star's atmosphere reveal which elements are present and gives us a window into the Milky Way's past. This tool lets you explore how those fingerprints change across the <b>Kiel diagram</b> (close relation to the HR diagram), which maps stars by their surface temperature (T<sub>eff</sub>) and surface gravity (log&nbsp;g). This diagram is also split by metallicity, which generally increases from left to right along this plot. Together, these parameters tell us what kind of star we're looking at and where they might be on their evolutionary journey.
+                        </p>
+                        <iframe 
+                            src="kiel_explorer.html"
+                            width="100%"
+                            height="750px"
+                            frameborder="0"
+                            scrolling="no"
+                            style="border-radius: 4px;">
+                        </iframe>
+                        <p>
+                            <b>To use:</b> click any point on the Kiel diagram to select a stellar population (Box A). Then click a second point to compare and the two stacked spectra will appear side by side with a difference spectrum below. Use the element toggle buttons to highlight the wavelength regions sensitive to specific atomic species. Please note that this feature is intended to be used on desktop!
+                        </p>
+                        <p>
+                            The stars here come from the <b>Gaia RVS survey</b> cross-matched with APOGEE DR17 and have a signal-to-noise ratio above 100. These stars are grouped by their position in the Kiel diagram and by metallicity ([Fe/H]) into metal-poor, metal-normal, and metal-rich bins. Each bin's spectrum is an <b>inverse-variance weighted sum</b> of the spectra in that bin. To explore which elements can be found in this region of the spectrum, you can toggle the different element (or molecular) buttons.
+                        </p>
+                        <h3>The Calcium Triplet</h3>
+                        <p>
+                            The three deep absorption features dominating these spectra are the <b>Calcium II infrared triplet</b> (CaT), found at 8498, 8542, and 8662 Å. These lines are among the strongest features in the optical/near-infrared spectrum of cool stars, and are incredibly sensitive to both surface gravity and metallicity — making them a powerful diagnostic for stellar population studies.
+                        </p>
+                        <p>
+                            Notice how the line depths and widths change systematically as you move across the Kiel diagram — giants (top of plot) show deeper lines than dwarfs (bottom of plot) at the same temperature, and metal-poor stars show visibly weaker features than their metal-rich counterparts which is visible in the exploration above.
+                        </p>
+                    </div>
+                    <div style="max-width: 1000px; margin: 0 auto;">
+                        <img src="images/calcium_triplet.png" alt="Stacked spectra showing the Calcium II infrared triplet across stellar populations" style="width: 100%; height: auto; border-radius: 4px;" />
+                        <p style="font-size: 0.85em; color: #aaa; margin-top: 0.6em; font-style: italic;">
+                            Inverse-variance weighted stacked spectra across six stellar populations in the Kiel diagram, offset for clarity. Each color corresponds to a different region of the diagram as shown on the left.
+                        </p>
+
+                    </div>
+                    <p style="font-size:0.85em; color:#aaa; max-width:860px; margin: 0 auto;">
+                        Data: Gaia RVS Spectra &middot; Stellar parameters from APOGEE &middot; Built with <a href="https://bokeh.org" style="color:#aaa;">Bokeh</a>
+                    </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Footer -->
+            <footer class="wrapper style1 align-center">
+                <div class="inner">
+                    <h2>Get in touch!</h2>
+                    <ul class="icons">
+                        <li><a href="https://bsky.app/profile/theastrozo.bsky.social" class="icon solid style2 fa-cloud-sun" style="color: inherit;"><span class="label">BlueSky</span></a></li>
+                        <li><a href="https://github.com/zoehackshaw" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/zoehackshaw/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="mailto:zoehackshaw@utexas.edu" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                    <p>&copy; Zoe Hackshaw. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- PASTE BOKEH SCRIPT TAG HERE -->
+        <!-- Replace this comment with the <script> output of components(layout) -->
+
+    </body>
+</html>
